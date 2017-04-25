@@ -7,7 +7,7 @@ short_description: HardenedBSD with contextualization
 tags:
 - hardenedbsd
 format: qcow2
-creation_time: FIX_UNIX_T
+creation_time: 1493079384
 os-id: HardenedBSD
 os-release: '11.0'
 os-arch: x86_64
