@@ -1,0 +1,41 @@
+---
+name: HardenedBSD 11.0-STABLE
+version: '1.0'
+publisher: Florian Heigl
+description: HardenedBSD with contextualization (based on Trivago 10.3 image, updated to 11 and then converted to hbsd). Image size is 4GB, virtual disk is 20GB. To set use just add a network. To change your root password, just login via SSH and set your password.
+short_description: HardenedBSD with contextualization
+tags:
+- hardenedbsd
+format: qcow2
+creation_time: FIX_UNIX_T
+os-id: HardenedBSD
+os-release: '11.0'
+os-arch: x86_64
+hypervisor: KVM
+opennebula_version: 4.8, 4.10, 4.12, 4.14, 5.0, 5.2
+opennebula_template:
+  context:
+    network: 'YES'
+    ssh_public_key: $USER[SSH_PUBLIC_KEY]
+    set_hostname: $NAME
+  cpu: '1'
+  graphics:
+    listen: 0.0.0.0
+    type: vnc
+  memory: '1024'
+  os:
+    arch: x86_64
+  user_inputs:
+    ssh_user_key: 'M|text|SSH KEY: Additional ssh key to add'
+logo: hardenedbsd.png
+images:
+- name: HardenedBSD-11.0
+# FIX URL HTTPS
+  url: http://163.172.153.34/images/b47b0c06cd2ff7ec3360e5de3a16da23.gz
+  type: OS
+  dev_prefix: vd
+  driver: qcow2
+  size: 21474836480
+  checksum:
+    md5: 0d85d4672a173ac5eadeecdec4e8f31c
+    sha256: 1a0dc8afbb11a1759d02949472b420c800e7e967aa3147d408862424b6cf552f
